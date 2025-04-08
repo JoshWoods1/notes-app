@@ -1,0 +1,23 @@
+###
+GET http://localhost:3000/api/notes/67f45c86910d51e24769bbb1
+
+###
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+
+{
+  "title": "Test Note",
+  "content": "This is a test note."
+}
+
+###
+PUT http://localhost:3000/api/notes/67f45c86910d51e24769bbb1
+Content-Type: application/json
+
+{
+    "title": "Different Note",
+    "content": "This is a test note."
+}
+
+###
+DELETE http://localhost:3000/api/notes/67f45d96910d51e24769bbb8

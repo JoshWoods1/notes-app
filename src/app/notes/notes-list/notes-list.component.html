@@ -1,0 +1,30 @@
+<div class="container my-4">
+    <button class="btn btn-primary" routerLink="new" style="margin-top: 10px;">Create a Note</button>
+    <h2 class="mb-4">Your Notes</h2>
+  
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search notes..."
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="filterNotes()"
+      />
+    </div>
+  
+    <div *ngFor="let note of filteredNotes" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ note.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ note.category }}</h6>
+        <p class="card-text">{{ note.content }}</p>
+  
+        <button class="btn btn-sm btn-primary me-2" [routerLink]="['/edit', note._id]" >
+          Edit
+        </button>
+        <button class="btn btn-sm btn-danger" (click)="onDelete(note._id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  
